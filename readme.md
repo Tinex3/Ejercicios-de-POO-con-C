@@ -1,6 +1,6 @@
 # Ejercicios a realizar
 
-1. **Registro de Estudiantes:**
+1. **Registro de Estudiantes: Terminado**
    Define una estructura para representar a un estudiante con campos como nombre, edad y calificación. Crea funciones para inicializar, mostrar y actualizar la calificación de un estudiante.
 
 2. **Calculadora de Geometría: Terminado** 
