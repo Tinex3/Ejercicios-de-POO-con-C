@@ -1,7 +1,5 @@
 # Ejercicios a realizar
 
-### Ejercicios adicionales:
-
 1. **Registro de Estudiantes:**
    Define una estructura para representar a un estudiante con campos como nombre, edad y calificación. Crea funciones para inicializar, mostrar y actualizar la calificación de un estudiante.
 
