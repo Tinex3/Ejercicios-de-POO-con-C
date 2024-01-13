@@ -9,7 +9,7 @@
 3. **Gestión de Empleados: Terminado**
    Define una estructura para representar a un empleado con campos como nombre, salario y antigüedad. Implementa funciones para calcular el salario anual y mostrar la información del empleado.
 
-4. **Lista de Tareas:**
+4. **Lista de Tareas: Pendiente**
    Crea una aplicación simple para gestionar una lista de tareas. Define una estructura para representar una tarea y utiliza funciones para agregar, mostrar y eliminar tareas.
 
 5. **Registro de Contactos:**
