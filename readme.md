@@ -6,7 +6,7 @@
 2. **Calculadora de Geometría: Terminado** 
    Crea una calculadora de geometría que acepte la entrada del usuario para calcular áreas y perímetros de diferentes formas geométricas (cuadrado, círculo, triángulo).
 
-3. **Gestión de Empleados:**
+3. **Gestión de Empleados: Terminado**
    Define una estructura para representar a un empleado con campos como nombre, salario y antigüedad. Implementa funciones para calcular el salario anual y mostrar la información del empleado.
 
 4. **Lista de Tareas:**
