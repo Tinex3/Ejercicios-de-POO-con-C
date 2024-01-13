@@ -3,7 +3,7 @@
 1. **Registro de Estudiantes:**
    Define una estructura para representar a un estudiante con campos como nombre, edad y calificación. Crea funciones para inicializar, mostrar y actualizar la calificación de un estudiante.
 
-2. **Calculadora de Geometría:**
+2. **Calculadora de Geometría: Terminado** 
    Crea una calculadora de geometría que acepte la entrada del usuario para calcular áreas y perímetros de diferentes formas geométricas (cuadrado, círculo, triángulo).
 
 3. **Gestión de Empleados:**
