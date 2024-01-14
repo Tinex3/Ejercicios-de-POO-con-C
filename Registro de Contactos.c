@@ -1,9 +1,7 @@
-/*Registro de Contactos: Diseña un programa que gestione un
-registro de contactos. Cada contacto debe tener información
-como nombre, número de teléfono y dirección. Implementa funciones para añadir,
-mostrar y buscar contactos.*/
 #include <stdio.h>
 #include <string.h>
+
+#define MAX_CONTACTOS 100
 
 struct Contacto
 {
@@ -19,53 +17,86 @@ void InicializarContato(struct Contacto *contacto, const char *Nombre, const cha
     contacto->NumeroTelefonico = NumeroTelefonico;
 }
 
-void AgregarContato(struct Contacto *contacto)
+void AgregarContacto(struct Contacto *contactos, int *cantidad)
 {
+    if (*cantidad < MAX_CONTACTOS)
+    {
+        printf("Por favor, ingrese el nombre de su contacto: ");
+        scanf("%s", contactos[*cantidad].Nombre);
 
-    printf("Por favor, Ingrese el nombre de su contacto: \n");
-    scanf("%s", contacto->Nombre);
+        printf("Por favor, ingrese la direccion de su contacto: ");
+        scanf("%s", contactos[*cantidad].Direccion);
 
-    printf("Por favor, Ingresa la direccion de su contacto: ");
-    scanf("%s,", contacto->Direccion);
+        printf("Por favor, ingrese el numero de su contacto: ");
+        scanf("%d", &contactos[*cantidad].NumeroTelefonico);
 
-    printf("Por favor, Ingresar el numero de su contacto");
-    scanf("%d", contacto->NumeroTelefonico);
-
-    while (getchar() != '\n')
-        ;
+        (*cantidad)++;
+    }
+    else
+    {
+        printf("¡Error! Se ha alcanzado el límite de contactos.\n");
+    }
 }
 
-void mostrarcontacto(struct Contacto *contacto)
+void MostrarContacto(struct Contacto *contacto)
 {
     printf("El nombre de tu contacto es: %s\n", contacto->Nombre);
     printf("La direccion de tu contacto es: %s\n", contacto->Direccion);
     printf("El numero de tu contacto es: %d\n", contacto->NumeroTelefonico);
 }
 
-// void imprimircontacto(struct Contacto *contactos in){
-//     for(int i = 0; i < cantidad; i++){
-//         printf("Nombre del contacto %d: %s\n" i + 1,);
-//     }
-// }
+void MostrarTodosLosContactos(struct Contacto *contactos, int cantidad)
+{
+    printf("Lista de Contactos:\n");
+    for (int i = 0; i < cantidad; i++)
+    {
+        printf("Contacto %d:\n", i + 1);
+        MostrarContacto(&contactos[i]);
+        printf("\n");
+    }
+}
+
 int main()
 {
-    int SelectorDeEstado;
+    struct Contacto contactos[MAX_CONTACTOS];
+    int cantidadContactos = 0;
+    int SelectorDeEstado = 0;
+
     while (1)
     {
-        printf("Selecciones 1 si quiere buscar un contacto\n");
-        printf("Selecciones 2 si quiere agregar un nuevo contacto\n");
-        scanf("%s", SelectorDeEstado);
+        printf("Seleccione 1 si desea buscar un contacto\n");
+        printf("Seleccione 2 si desea agregar un nuevo contacto\n");
+        printf("Seleccione 3 para salir\n");
+        scanf("%d", &SelectorDeEstado);
+
         switch (SelectorDeEstado)
         {
         case 1:
-
+            printf("Elegiste 1\n");
+            if (cantidadContactos > 0)
+            {
+                MostrarTodosLosContactos(contactos, cantidadContactos);
+            }
+            else
+            {
+                printf("No hay contactos para mostrar.\n");
+            }
             break;
+
         case 2:
-
+            printf("Elegiste 2\n");
+            AgregarContacto(contactos, &cantidadContactos);
             break;
+
+        case 3:
+            printf("Saliendo del programa.\n");
+            return 0;
+
         default:
+            printf("Opción no válida. Por favor, elija nuevamente.\n");
             break;
         }
     }
+
     return 0;
 }
